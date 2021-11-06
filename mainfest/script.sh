@@ -2,7 +2,6 @@
 
 export home=/home/ec2-user/
 export projectbname=jumia_phone_validator
-export test=/home/ahmed/Desktop/
 
 
 ################# ssh config 
