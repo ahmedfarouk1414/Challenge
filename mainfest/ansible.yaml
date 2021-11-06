@@ -1,0 +1,21 @@
+#--- # COPY MODULE EXAMPLE
+#- hosts: admin
+#  user: ec2-user
+#  #sudo: yes
+#  connection: ssh
+#  gather_facts: yes
+#
+#  tasks:
+#    - name: Execute the script
+#      shell: ls -al
+
+--- # COPY MODULE EXAMPLE
+ - hosts: admin
+   user: ec2-user
+   sudo: yes 
+   connection: ssh 
+   gather_facts: no 
+   tasks: 
+     - name: Copy from the files directory test file 
+       action: copy src=../jumia_phone_validator dest=/home/ec2-user/ owner=ec2-user group=ec2-user mode=0666   
+

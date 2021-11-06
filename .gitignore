@@ -1,0 +1,6 @@
+/mainfest/mykey
+/mainfest/mykey.pub
+/mainfest/terraform.tfvars
+/mainfest/terraform.tfstate
+/mainfest/terraform.tfstate.backup
+
