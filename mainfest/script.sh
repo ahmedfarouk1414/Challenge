@@ -29,7 +29,8 @@ sudo yum install nodejs -y
 cd ~/jumia_phone_validator/validator-frontend/ &&  npm i && npm run build && sudo docker build -t  w491994/validator-frontend-image:front . &&  sudo docker push w491994/validator-frontend-image:front
 
 
-
+################################## restore database 
+pg_restore -h database-3.ceg9ua9ljrsl.eu-central-1.rds.amazonaws.com  -p 5432 -U postgress -f  sample.sql
 
 ########################################## mavan
 sudo mkdir /opt/mavan/ && cd /opt/mavan &&  sudo wget https://archive.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
@@ -43,5 +44,5 @@ source ~/.bash_profile
 cd /home/ec2-user/jumia_phone_validator/validator-backend/ &&  mvn clean install &&  sudo docker build -t  w491994/validator-frontend-image:backend . &&  sudo docker push w491994/validator-frontend-image:backend
 
 #################################
-
 cd /home/ec2-user/jumia_phone_validator/ && sudo docker-compose up
+
