@@ -18,4 +18,9 @@
    tasks: 
      - name: Copy from the files directory test file 
        action: copy src=../jumia_phone_validator dest=/home/ec2-user/ owner=ec2-user group=ec2-user mode=0666   
+       
+     - name: Ansible delete file example
+       file:
+         path: /home/ec2-user/jumia_phone_validator/mainfest/script.sh
+         state: absent
 

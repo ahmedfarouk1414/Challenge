@@ -1,27 +1,15 @@
-# Customers' phone number validator API & UI
+##  preper challenge
 
-API & UI to validate and list customers' and their phone numbers validation and countries.
+- install terafrom and ansible 
+- create private key and private key that will attach to ec2 will use by terraform  
+    ssh-keygen -f mykey
+
+## terraform apply 
+    - will go to mainfest folder to make teraform plan than teraform apply 
+    
+## ansible config 
+   - i write all config that will be deploy in script inside mainfest folder script.ssh 
+     script.ssh that include all dependences like (docker , mvn , nodejs, psql client)
+     
+   - ansible-playbook ansible.yaml  --key-file mainfest/mykey -e 'ansible_ssh_port=1337'
   
----
-
-## Technical specifications
-
-API application was made by Java v8 using Spring boot framework v2.4.5 and UI was made using ReactJS,
-
-
----
-
-### Docker 
- 
-please run following commands to run the app using Docker compose
-
-* docker-compose up -d
-* UI could be accessed through http://localhost:8081/ 
-* API could be accessed through http://localhost:8080/api/v1/customers
-
-For a platform independent, easy and fast running of the project, backend and frontend images where pushed on docker hub and the docker-compose file will pull them directly, 
-alternatively Docker files are provided for both backend and frontend, and they could be used to build and run their images locally, but this needs node and maven to be instsalled on the machine.
-README files are provided for both frontend and backend for more details.
-
----
-
