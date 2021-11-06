@@ -2,6 +2,9 @@
 
 export home=/home/ec2-user/
 export projectbname=jumia_phone_validator
+export spring.datasource.url=jdbc:postgresql://localhost:5432/validator_backend
+export spring.datasource.username=root
+export spring.datasource.password=
 
 
 ################# ssh config 
