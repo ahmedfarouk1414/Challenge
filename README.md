@@ -11,14 +11,14 @@
             - ansible.yaml
             - script.sh
         - Variable 
-           - key.tf
-           - output.tf
-           - provider.tf
-           - vars.tf
-           - versions.tf
-
+           - key.tf              ### resource public key   
+           - output.tf           ### out url for elb and rds 
+           - provider.tf         ###
+           - vars.tf             ### define Variables 
+           - versions.tf         #### terraform version
+           - terraform.tfvars    #### contain key aws 
         - deploy aws service 
-            elb.tf
+            elb.tf    
             vpc.tf
             targetgroup.tf
             nat.tf
