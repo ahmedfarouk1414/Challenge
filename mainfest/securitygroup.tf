@@ -13,14 +13,16 @@ resource "aws_security_group" "myinstance" {
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = [aws_security_group.elb-securitygroup.id]
+    #security_groups = [aws_security_group.elb-securitygroup.id]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
  ingress {
     from_port       = 443
     to_port         = 443
     protocol        = "tcp"
-    security_groups = [aws_security_group.elb-securitygroup.id]
+    #security_groups = [aws_security_group.elb-securitygroup.id]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
 
@@ -86,8 +88,21 @@ resource "aws_security_group" "allow-postgres" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-
-
+ ingress {
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
+    security_groups = [aws_security_group.myinstance-securitygroup.id]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
+ ingress {
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
+    security_groups = [aws_security_group.myinstance-securitygroup.id]
+    
+  }
 
 
 
