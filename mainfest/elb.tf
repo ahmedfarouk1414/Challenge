@@ -27,3 +27,44 @@ resource "aws_elb" "my-elb" {
   }
 }
 
+
+
+# Forward action
+
+resource "aws_lb_listener_rule" "host_backend" {
+  listener_arn =  aws_elb.my-elb.arn
+  priority     = 99
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.backend.arn
+  }
+
+  condition {
+    host_header {
+      values = ["backend.jumia.com"]
+    }
+  }
+}
+
+
+
+
+
+# Forward action
+
+resource "aws_lb_listener_rule" "host_front" {
+  listener_arn =  aws_elb.my-elb.arn
+  priority     = 100
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.front.arn
+  }
+
+  condition {
+    host_header {
+      values = ["front.jumia.com"]
+    }
+  }
+}
