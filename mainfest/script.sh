@@ -32,7 +32,7 @@ cd $home/$projectbname/validator-frontend/ &&  npm i && npm run build && sudo do
 
 
 ################################## restore database 
-pg_restore -h database-3.ceg9ua9ljrsl.eu-central-1.rds.amazonaws.com  -p 5432 -U postgress -f  sample.sql
+psql -h database-3.ceg9ua9ljrsl.eu-central-1.rds.amazonaws.com -U postgres -p 5432 jumia_phone_validator  < ./mainfest/sample.sql 
 
 ########################################## mavan
 sudo mkdir /opt/mavan/ && cd /opt/mavan &&  sudo wget https://archive.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
